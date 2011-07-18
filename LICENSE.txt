@@ -1,4 +1,4 @@
-JSTypes 1.00 
+JSTypes 1.10 
 http://github.com/EvanHahn/JSTypes
 Copyright (c) 2011 Evan Hahn
 

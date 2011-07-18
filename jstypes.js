@@ -1,4 +1,4 @@
-/*	JSTypes, version 1.00
+/*	JSTypes, version 1.10
 	by Evan Hahn
 	See LICENSE.txt for more info.	*/
 
@@ -11,7 +11,7 @@ JSTypes.isBoolean = function(b) { return ((typeof b === typeof true) || (b insta
 JSTypes.isArray = function(a) { return a instanceof Array };
 JSTypes.isUndefined = function(u) { return typeof u === "undefined" };
 JSTypes.isDefined = function(d) { return typeof d !== "undefined" };
-// If you're looking for it, isNaN() is built in to JavaScript
+JSTypes.isNAN = function(i) { return i !== i };
 
 JSTypes.makeUndefined = function() { return; };
-JSTypes.makeNaN = function() { return parseInt(void 0) };
+JSTypes.makeNaN = function() { return 0 / 0 };

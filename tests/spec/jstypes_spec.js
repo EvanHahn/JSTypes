@@ -139,6 +139,21 @@ describe("JSTypes", function() {
 		expect(JSTypes.isDefined(x)).toBeFalsy();
 	});
 	
+	it("checks if something is NaN (when it is)", function() {
+		var x = 0 / 0;
+		expect(JSTypes.isNAN(x)).toBeTruthy();
+	});
+
+	it("checks if something is NaN (when it isn't)", function() {
+		var x = 5;
+		expect(JSTypes.isNAN(x)).toBeFalsy();
+	});
+
+	it("checks if something is NaN (when it isn't, but JavaScript thinks so)", function() {
+		var x = "hi";	// isNaN(x) is true, which is wrong!
+		expect(JSTypes.isNAN(x)).toBeFalsy();
+	});
+	
 	it("creates undefined", function() {
 		undefined = 1;
 		var x;
@@ -149,6 +164,7 @@ describe("JSTypes", function() {
 	it("creates NaN", function() {
 		var oldNaN = NaN;
 		expect(isNaN(JSTypes.makeNaN())).toBeTruthy();
+		expect(JSTypes.makeNaN()).not.toEqual(JSTypes.makeNaN());
 		NaN = oldNaN;
 	});
 
