@@ -1,5 +1,4 @@
-/*	JSTypes
-	version 1.00
+/*	JSTypes, version 1.00
 	by Evan Hahn
 	See LICENSE.txt for more info.	*/
 

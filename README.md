@@ -3,7 +3,7 @@
 JSTypes is a small JavaScript library that does two things:
 
 1. Check if variables are of certain types (numbers, strings, undefined)
-2. Reliably create certain values (undefined, NaN)
+2. Reliably create certain values (`undefined`, `NaN`)
 
 Examples:
 
@@ -31,3 +31,19 @@ JSTypes.isUndefined(x);    // true
 I recommend (and do) move this library into your code's namespace if you're writing a library. Just replace all occurrences of `JSTypes` with your library's namespace.
 
 For licensing info, see LICENSE.txt.
+
+## API ##
+
+Here's everything in the API.
+
+* `JSTypes.isNumber(toCheck)` returns true if something is a number
+* `JSTypes.isInteger(toCheck)` returns true if something is an integer
+* `JSTypes.isString(toCheck)` returns true if something is a string
+* `JSTypes.isBoolean(toCheck)` returns true if something is a boolean
+* `JSTypes.isArray(toCheck)` returns true if something is an array
+* `JSTypes.isUndefined(toCheck)` returns true if something is undefined
+* `JSTypes.isDefined(toCheck)` returns true if something is defined
+* `JSTypes.makeUndefined()` always returns `undefined`
+* `JSTypes.makeNaN()` always returns `NaN`
+
+If you're looking for them, `isNaN()` is built in to JavaScript and `null` cannot be broken.
