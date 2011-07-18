@@ -13,5 +13,5 @@ JSTypes.isUndefined = function(u) { return typeof u === "undefined" };
 JSTypes.isDefined = function(d) { return typeof d !== "undefined" };
 JSTypes.isNAN = function(i) { return i !== i };
 
-JSTypes.makeUndefined = function() { return; };
+JSTypes.makeUndefined = function() { return };
 JSTypes.makeNaN = function() { return 0 / 0 };
