@@ -1,4 +1,4 @@
-# JSTypes - version 1.00 #
+# JSTypes - version 1.10 #
 
 JSTypes is a small JavaScript library that does two things:
 
@@ -41,8 +41,9 @@ Here's everything in the API.
 * `JSTypes.isString(toCheck)` returns true if something is a string
 * `JSTypes.isBoolean(toCheck)` returns true if something is a boolean
 * `JSTypes.isArray(toCheck)` returns true if something is an array
-* `JSTypes.isUndefined(toCheck)` returns true if something is undefined
+* `JSTypes.isUndefined(toCheck)` returns true if something is `undefined`
 * `JSTypes.isDefined(toCheck)` returns true if something is defined
+* `JSTypes.isNAN(toCheck)` returns true if something is `NaN`
 * `JSTypes.makeUndefined()` always returns `undefined`
 * `JSTypes.makeNaN()` always returns `NaN`
 
