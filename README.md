@@ -1,4 +1,4 @@
-# JSTypes - version 1.10 #
+# JSTypes - version 1.15 #
 
 JSTypes is a small JavaScript library that does two things:
 
@@ -10,7 +10,7 @@ Examples:
 ```javascript
 var x = 1;
 var y = new Number(22);
-x instanceof Number;    // false
+x instanceof Number;    // false; not what we want!
 JSTypes.isNumber(x);    // true
 JSTypes.isNumber(y);    // true
 ```
@@ -44,7 +44,11 @@ Here's everything in the API.
 * `JSTypes.isUndefined(toCheck)` returns true if something is `undefined`
 * `JSTypes.isDefined(toCheck)` returns true if something is defined
 * `JSTypes.isNAN(toCheck)` returns true if something is `NaN`
-* `JSTypes.makeUndefined()` always returns `undefined`
-* `JSTypes.makeNaN()` always returns `NaN`
+* `JSTypes.makeUndefined()` always returns `undefined`, even if it's stupidly redefined
+* `JSTypes.makeNaN()` always returns `NaN`, even if it's stupidly redefined
 
-If you're looking for them, `isNaN()` is built in to JavaScript and `null` cannot be broken.
+## Where is JSTypes used? ##
+
+JSTypes has made its way into...
+
+* [Fiesta.js](http://github.com/EvanHahn/Fiesta.js), a JavaScript game library of mine
