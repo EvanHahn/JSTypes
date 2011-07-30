@@ -16,4 +16,5 @@
 
   JSTypes.makeUndefined = function() { return };
   JSTypes.makeNaN = function() { return 0 / 0 };
+  JSTypes.makeInfinity = function() { return 1 / 0 };
 }).call(this);
