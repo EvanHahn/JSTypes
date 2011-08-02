@@ -53,3 +53,5 @@ Here's everything in the API.
 JSTypes has made its way into...
 
 * [Fiesta.js](http://github.com/EvanHahn/Fiesta.js), a JavaScript game library of mine
+
+If you use JSTypes yourself, feel free to add your stuff to this list!
