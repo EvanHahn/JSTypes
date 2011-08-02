@@ -126,7 +126,7 @@ describe("JSTypes", function() {
 		var x = "defined, baby!";
 		expect(JSTypes.isDefined(x)).toBeTruthy();
 	});
-	
+
 	it("checks if something is defined (when it is), even if undefined is re-defined", function() {
 		undefined = 1;
 		var x = "once again, I'm definitely defined";
@@ -152,6 +152,22 @@ describe("JSTypes", function() {
 	it("checks if something is NaN (when it isn't, but JavaScript thinks so)", function() {
 		var x = "hi";	// isNaN(x) is true, which is wrong!
 		expect(JSTypes.isNAN(x)).toBeFalsy();
+	});
+
+	it("checks if something is infinite (when it is, and positive)", function() {
+		expect(JSTypes.isInfinite(1 / 0)).toBeTruthy();
+	});
+
+	it("checks if something is infinite (when it is, and negative)", function() {
+		expect(JSTypes.isInfinite(-1 / 0)).toBeTruthy();
+	});
+
+	it("checks if something is infinite (when it isn't, but is a number)", function() {
+     	expect(JSTypes.isInfinite(5)).toBeFalsy();
+	});
+
+	it("checks if something is infinite (when it isn't a number)", function() {
+     	expect(JSTypes.isInfinite("5")).toBeFalsy();
 	});
 
 	it("creates undefined", function() {

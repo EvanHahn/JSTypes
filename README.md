@@ -1,4 +1,4 @@
-# JSTypes - version 1.20 #
+# JSTypes - version 1.30 #
 
 JSTypes is a small JavaScript library that does two things:
 
@@ -44,6 +44,7 @@ Here's everything in the API.
 * `JSTypes.isUndefined(toCheck)` returns true if something is `undefined`
 * `JSTypes.isDefined(toCheck)` returns true if something is defined
 * `JSTypes.isNAN(toCheck)` returns true if something is `NaN`
+* `JSTypes.isInfinite(toCheck)` returns true of something is positive or negative infinity
 * `JSTypes.makeUndefined()` always returns `undefined`, even if it's stupidly redefined
 * `JSTypes.makeNaN()` always returns `NaN`, even if it's stupidly redefined
 * `JSTypes.makeInfinity()` always returns `Infinity`, even if it's stupidly redefined

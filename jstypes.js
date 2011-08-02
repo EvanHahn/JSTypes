@@ -1,8 +1,9 @@
-/*	JSTypes, version 1.20
+/*	JSTypes, version 1.30
 	by Evan Hahn
 	See LICENSE.txt for more info.	*/
 
 (function() {
+
   var JSTypes = typeof exports == 'object' && exports || (this.JSTypes = {}), getClass = {}.toString;
 
   JSTypes.isNumber = function(n) { return getClass.call(n) == '[object Number]' };
@@ -13,8 +14,10 @@
   JSTypes.isUndefined = function(u) { return typeof u == 'undefined' };
   JSTypes.isDefined = function(d) { return typeof d != 'undefined' };
   JSTypes.isNAN = function(i) { return i != i };
+  JSTypes.isInfinite = function(i) { return JSTypes.isNumber(i) && !isFinite(i) };
 
   JSTypes.makeUndefined = function() { return };
   JSTypes.makeNaN = function() { return 0 / 0 };
   JSTypes.makeInfinity = function() { return 1 / 0 };
+
 }).call(this);
