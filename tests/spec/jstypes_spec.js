@@ -153,7 +153,7 @@ describe("JSTypes", function() {
 		var x = "hi";	// isNaN(x) is true, which is wrong!
 		expect(JSTypes.isNAN(x)).toBeFalsy();
 	});
-	
+
 	it("creates undefined", function() {
 		undefined = 1;
 		var x;
@@ -162,10 +162,17 @@ describe("JSTypes", function() {
 	});
 
 	it("creates NaN", function() {
-		var oldNaN = NaN;
+     	NaN = 5;
 		expect(isNaN(JSTypes.makeNaN())).toBeTruthy();
 		expect(JSTypes.makeNaN()).not.toEqual(JSTypes.makeNaN());
-		NaN = oldNaN;
+		NaN = 0 / 0;
+	});
+
+	it("creates Infinity", function() {
+     	Infinity = 5;
+     	expect(isFinite(JSTypes.makeInfinity())).toBeFalsy();
+     	expect(JSTypes.isNumber(JSTypes.makeInfinity())).toBeTruthy();
+     	Infinity = 1 / 0;
 	});
 
 });
