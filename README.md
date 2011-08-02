@@ -46,6 +46,7 @@ Here's everything in the API.
 * `JSTypes.isNAN(toCheck)` returns true if something is `NaN`
 * `JSTypes.makeUndefined()` always returns `undefined`, even if it's stupidly redefined
 * `JSTypes.makeNaN()` always returns `NaN`, even if it's stupidly redefined
+* `JSTypes.makeInfinity()` always returns `Infinity`, even if it's stupidly redefined
 
 ## Where is JSTypes used? ##
 
