@@ -17,15 +17,15 @@ JSTypes.isNumber(y);    // true
 ```javascript
 var x;
 JSTypes.isUndefined(x);    // true
-undefined = 10;    // this is terrible code, but it might get written!
+undefined = 10;            // this is terrible code, but it might get written!
 JSTypes.isUndefined(x);    // still true
 ```
 ```javascript
 var x = 5;
 undefined = 10;
-x = undefined;    // bad: x = 10
+x = undefined;                  // bad: x = 10
 x = JSTypes.makeUndefined();    // good: x is now really undefined
-JSTypes.isUndefined(x);    // true
+JSTypes.isUndefined(x);         // true
 ```
 
 I recommend (and do) move this library into your code's namespace if you're writing a library. Just replace all occurrences of `JSTypes` with your library's namespace.
