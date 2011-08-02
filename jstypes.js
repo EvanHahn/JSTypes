@@ -1,4 +1,4 @@
-/*	JSTypes, version 1.15
+/*	JSTypes, version 1.20
 	by Evan Hahn
 	See LICENSE.txt for more info.	*/
 
