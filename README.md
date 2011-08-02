@@ -1,9 +1,9 @@
-# JSTypes - version 1.15 #
+# JSTypes - version 1.20 #
 
 JSTypes is a small JavaScript library that does two things:
 
 1. Check if variables are of certain types (numbers, strings, undefined)
-2. Reliably create certain values (`undefined`, `NaN`)
+2. Reliably create certain values (`undefined`, `NaN`, `Infinity`)
 
 Examples:
 
