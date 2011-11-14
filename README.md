@@ -49,10 +49,3 @@ Here's everything in the API.
 * `JSTypes.makeNaN()` always returns `NaN`, even if it's stupidly redefined
 * `JSTypes.makeInfinity()` always returns `Infinity`, even if it's stupidly redefined
 
-## Where is JSTypes used? ##
-
-JSTypes has made its way into...
-
-* [Fiesta.js](http://github.com/EvanHahn/Fiesta.js), a JavaScript game library of mine
-
-If you use JSTypes yourself, feel free to add your stuff to this list!
