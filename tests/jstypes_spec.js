@@ -62,6 +62,28 @@ describe("JSTypes", function() {
 		expect(JSTypes.isInteger(null)).toBeFalsy();
 	});
 
+	// isString()
+	it("checks if a primitive value is a string (when it is)", function() {
+		var x = "Hello, world!";
+		expect(JSTypes.isString(x)).toBeTruthy();
+	});
+	it("checks if a primitive value is a string (when it isn't)", function() {
+		var x = 5;
+		expect(JSTypes.isString(x)).toBeFalsy();
+	});
+	it("checks if a String object is a string (when it is)", function() {
+		var x = new String("Hello, planet Earth.");
+		expect(JSTypes.isString(x)).toBeTruthy();
+	});
+	it("checks if an object is a string (when it isn't)", function() {
+		var x = new Number(12);
+		expect(JSTypes.isString(x)).toBeFalsy();
+	});
+	it("checks if undefined is a string", function() {
+		var x;
+		expect(JSTypes.isString(x)).toBeFalsy();
+	});
+
 	// isBoolean()
 	it("checks if a primitive value is a boolean (when it is)", function() {
 		var x = true;
