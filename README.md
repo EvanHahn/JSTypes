@@ -1,4 +1,4 @@
-# JSTypes - version 1.40 #
+# JSTypes - version 1.41 #
 
 JSTypes is a small JavaScript library that does two things:
 
