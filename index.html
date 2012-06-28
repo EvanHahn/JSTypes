@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>JSTypes by EvanHahn</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>JSTypes</h1>
+        <p>JSTypes is a small JavaScript library that deals with variable types.</p>
+
+        <p class="view"><a href="https://github.com/EvanHahn/JSTypes">View the Project on GitHub <small>EvanHahn/JSTypes</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/EvanHahn/JSTypes/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/EvanHahn/JSTypes/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/EvanHahn/JSTypes">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>JSTypes</h1>
+
+<p>JSTypes is a small JavaScript library that does two things:</p>
+
+<ol>
+<li>Check if variables are of certain types (numbers, strings, undefined)</li>
+<li>Reliably create certain values (<code>undefined</code>, <code>NaN</code>, <code>Infinity</code>)</li>
+</ol><p>Examples:</p>
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="mi">22</span><span class="p">);</span>
+<span class="nx">x</span> <span class="k">instanceof</span> <span class="nb">Number</span><span class="p">;</span>    <span class="c1">// false; not what we want!</span>
+<span class="nx">JSTypes</span><span class="p">.</span><span class="nx">isNumber</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>    <span class="c1">// true</span>
+<span class="nx">JSTypes</span><span class="p">.</span><span class="nx">isNumber</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>    <span class="c1">// true</span>
+</pre>
+</div>
+
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+<span class="nx">JSTypes</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>    <span class="c1">// true</span>
+<span class="kc">undefined</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>            <span class="c1">// this is terrible code, but it might get written!</span>
+<span class="nx">JSTypes</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>    <span class="c1">// still true</span>
+</pre>
+</div>
+
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kc">undefined</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>                  <span class="c1">// bad: x = 10</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="nx">JSTypes</span><span class="p">.</span><span class="nx">makeUndefined</span><span class="p">();</span>    <span class="c1">// good: x is now really undefined</span>
+<span class="nx">JSTypes</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>         <span class="c1">// true</span>
+</pre>
+</div>
+
+
+<p>I recommend (and do) move this library into your code's namespace if you're writing a library. Just replace all occurrences of <code>JSTypes</code> with your library's namespace.</p>
+
+<p>For licensing info, see LICENSE.txt.</p>
+
+<h2>API</h2>
+
+<p>Here's everything in the API.</p>
+
+<ul>
+<li>
+<code>JSTypes.isNumber(toCheck)</code> returns true if something is a number</li>
+<li>
+<code>JSTypes.isInteger(toCheck)</code> returns true if something is an integer</li>
+<li>
+<code>JSTypes.isString(toCheck)</code> returns true if something is a string</li>
+<li>
+<code>JSTypes.isBoolean(toCheck)</code> returns true if something is a boolean</li>
+<li>
+<code>JSTypes.isArray(toCheck)</code> returns true if something is an array</li>
+<li>
+<code>JSTypes.isDefined(toCheck)</code> returns true if something is defined (will return false for <code>undefined</code>, or <code>null</code>, or <code>NaN</code>)</li>
+<li>
+<code>JSTypes.isUndefined(toCheck)</code> returns true if something is <code>undefined</code>
+</li>
+<li>
+<code>JSTypes.isNAN(toCheck)</code> returns true if something is <code>NaN</code>
+</li>
+<li>
+<code>JSTypes.isInfinite(toCheck)</code> returns true of something is positive or negative infinity</li>
+<li>
+<code>JSTypes.makeUndefined()</code> always returns <code>undefined</code>, even if it's stupidly redefined</li>
+<li>
+<code>JSTypes.makeNaN()</code> always returns <code>NaN</code>, even if it's stupidly redefined</li>
+<li>
+<code>JSTypes.makeInfinity()</code> always returns <code>Infinity</code>, even if it's stupidly redefined</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/EvanHahn">EvanHahn</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
