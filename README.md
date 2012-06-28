@@ -5,6 +5,8 @@ JSTypes is a small JavaScript library that does two things:
 1. Check if variables are of certain types (numbers, strings, undefined)
 2. Reliably create certain values (`undefined`, `NaN`, `Infinity`)
 
+Note that you probably shouldn't use JSTypes unless you need it -- other popular libraries like [jQuery](http://jquery.com) and [Underscore](http://underscorejs.org/) already have many of these methods. If you aren't using these libraries, then JSTypes might be of help!
+
 Examples:
 
 ```javascript
